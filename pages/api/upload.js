@@ -1,6 +1,5 @@
 import formidable from "formidable";
 import fs from "fs";
-import path from "path";
 import { createDataContext, extractXlsxData } from "../../utils/xlsxHelpers";
 
 export const config = {
@@ -25,11 +24,6 @@ export default async function handler(req, res) {
 
     try {
       extractedData = extractXlsxData(filePath);
-      // Save extractedData to ./extractedData.json
-      fs.writeFileSync(
-        path.join(process.cwd(), "extractedData.json"),
-        JSON.stringify(extractedData, null, 2)
-      );
       dataContext = createDataContext(extractedData);
       fs.unlinkSync(filePath);
 

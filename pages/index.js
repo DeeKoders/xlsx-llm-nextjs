@@ -67,7 +67,7 @@ export default function Home() {
             letterSpacing: 1,
           }}
         >
-          📊 Sheetly AI - Talk to your Excel Sheet
+          📊 Sheetly AI - Talk to your excel sheet
         </h2>
         <div
           style={{
