@@ -26,6 +26,10 @@ export default function Home() {
   };
 
   const sendMessage = async () => {
+    if (Object.keys(data).length === 0) {
+      alert("Please upload file.");
+      return;
+    }
     setChat([...chat, { from: "user", text: input }]);
     setInput("");
     const res = await fetch("/api/chat", {
@@ -124,6 +128,7 @@ export default function Home() {
           />
           <button
             onClick={sendMessage}
+            disabled={input.trim() === ""}
             style={{
               background: "#38a169",
               color: "#fff",

@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         },
         {
           role: "user",
-          content: `${message}. Instructions: 1. Take 0 as not paid/missing amount. 2. Keep the response to the point and concise.`,
+          content: `${message}. "Keep the response to the point and concise."`,
         },
       ],
       model: "deepseek-ai/DeepSeek-V3",
